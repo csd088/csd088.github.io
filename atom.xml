@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-08-22T15:27:50+08:00</updated>
+  <updated>2018-08-22T15:34:09+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[测试1]]></title>
+    <link href="http://csd088.github.io/blog/2018/08/22/ce-shi-1/"/>
+    <updated>2018-08-22T15:33:57+08:00</updated>
+    <id>http://csd088.github.io/blog/2018/08/22/ce-shi-1</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[第一页]]></title>
