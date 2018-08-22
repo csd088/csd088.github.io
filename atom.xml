@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://csd088.github.io/atom.xml" rel="self"/>
+  <link href="http://csd088.github.io/"/>
+  <updated>2018-08-22T15:27:50+08:00</updated>
+  <id>http://csd088.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[第一页]]></title>
+    <link href="http://csd088.github.io/blog/2018/08/22/di-%5B%3F%5D-ye/"/>
+    <updated>2018-08-22T15:17:13+08:00</updated>
+    <id>http://csd088.github.io/blog/2018/08/22/di-[?]-ye</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First Post]]></title>
+    <link href="http://csd088.github.io/blog/2018/08/22/first-post/"/>
+    <updated>2018-08-22T15:03:43+08:00</updated>
+    <id>http://csd088.github.io/blog/2018/08/22/first-post</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
