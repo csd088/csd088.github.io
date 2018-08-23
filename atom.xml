@@ -4,7 +4,7 @@
   <title><![CDATA[东方不败的个人博客]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-08-23T15:53:50+08:00</updated>
+  <updated>2018-08-23T17:50:10+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[chenshengdong]]></name>
@@ -235,11 +235,10 @@ git push origin source     # 将源文件push到Github的source分支
 
 <p>直接上代码后面再解释</p>
 
-<pre><code>- (UITableView *)tableView {         if (!_tableView) {            UITableViewController* tvc=[[UITableViewController alloc] initWithStyle:UITableViewStylePlain];            [self addChildViewController:tvc];            [tvc.view setFrame:self.view.frame];            _tableView=tvc.tableView;            _tableView.delegate = self;            _tableView.dataSource = self;            _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;      }        return _tableView;
-} 
-</code></pre>
-
-<p>直接在初始化TableView的时候用系统的UITableViewController替换掉，因为UITableViewController中的tableview已经做了可以自适应键盘高度来改变tableview的额外高度。</p>
+<p><code>objc
+- (UITableView *)tableView {      if (!_tableView) {        UITableViewController* tvc=[[UITableViewController alloc] initWithStyle:UITableViewStylePlain];       [self addChildViewController:tvc];       [tvc.view setFrame:self.view.frame];        _tableView=tvc.tableView;        _tableView.delegate = self;        _tableView.dataSource = self;        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;      }      return _tableView;
+}</code>
+直接在初始化TableView的时候用系统的UITableViewController替换掉，因为UITableViewController中的tableview已经做了可以自适应键盘高度来改变tableview的额外高度。</p>
 ]]></content>
   </entry>
   
