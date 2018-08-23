@@ -4,7 +4,7 @@
   <title><![CDATA[东方不败的个人博客]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-08-23T10:24:58+08:00</updated>
+  <updated>2018-08-23T13:51:47+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[chenshengdong]]></name>
@@ -38,15 +38,6 @@
     <link href="http://csd088.github.io/blog/2018/08/22/ce-shi-2/"/>
     <updated>2018-08-22T18:16:27+08:00</updated>
     <id>http://csd088.github.io/blog/2018/08/22/ce-shi-2</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[测试1]]></title>
-    <link href="http://csd088.github.io/blog/2018/08/22/ce-shi-1/"/>
-    <updated>2018-08-22T15:33:57+08:00</updated>
-    <id>http://csd088.github.io/blog/2018/08/22/ce-shi-1</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
