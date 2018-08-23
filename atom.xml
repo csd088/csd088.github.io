@@ -4,7 +4,7 @@
   <title><![CDATA[东方不败的个人博客]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-08-23T17:50:10+08:00</updated>
+  <updated>2018-08-23T17:59:57+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[chenshengdong]]></name>
@@ -235,10 +235,35 @@ git push origin source     # 将源文件push到Github的source分支
 
 <p>直接上代码后面再解释</p>
 
-<p><code>objc
-- (UITableView *)tableView {      if (!_tableView) {        UITableViewController* tvc=[[UITableViewController alloc] initWithStyle:UITableViewStylePlain];       [self addChildViewController:tvc];       [tvc.view setFrame:self.view.frame];        _tableView=tvc.tableView;        _tableView.delegate = self;        _tableView.dataSource = self;        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;      }      return _tableView;
-}</code>
-直接在初始化TableView的时候用系统的UITableViewController替换掉，因为UITableViewController中的tableview已经做了可以自适应键盘高度来改变tableview的额外高度。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> - (UITableView *)tableView {
+</span><span class='line'>      if (!_tableView) {
+</span><span class='line'>          UITableViewController* tvc=[[UITableViewController    alloc] initWithStyle:UITableViewStylePlain];
+</span><span class='line'>          [self addChildViewController:tvc];
+</span><span class='line'>          [tvc.view setFrame:self.view.frame];
+</span><span class='line'>          _tableView=tvc.tableView;
+</span><span class='line'>          _tableView.delegate = self;
+</span><span class='line'>          _tableView.dataSource = self;
+</span><span class='line'>          _tableView.separatorStyle =   UITableViewCellSeparatorStyleSingleLine;
+</span><span class='line'>          }
+</span><span class='line'>      return _tableView;
+</span><span class='line'>  }
+</span><span class='line'>          </span></code></pre></td></tr></table></div></figure>
+
+
+<p>直接在初始化TableView的时候用系统的UITableViewController替换掉，因为UITableViewController中的tableview已经做了可以自适应键盘高度来改变tableview的额外高度。</p>
 ]]></content>
   </entry>
   
