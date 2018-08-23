@@ -94,6 +94,51 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-08-23T09:36:34+08:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2018/08/23/tabbleviewde-cellzhong-you-textfield,-textviewshi-fang-zhi-jian-pan-zhe-dang/" itemprop="url">TabbleView的Cell中有Textfield、TextView时防止键盘遮挡</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><h1>TableView的Cell中有TextField、TextView时防止键盘遮挡小技巧</h1>
+
+<p>直接上代码后面再解释</p>
+
+<pre><code>- (UITableView *)tableView {         if (!_tableView) {            UITableViewController* tvc=[[UITableViewController alloc] initWithStyle:UITableViewStylePlain];            [self addChildViewController:tvc];            [tvc.view setFrame:self.view.frame];            _tableView=tvc.tableView;            _tableView.delegate = self;            _tableView.dataSource = self;            _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;      }        return _tableView;
+} 
+</code></pre>
+
+<p>直接在初始化TableView的时候用系统的UITableViewController替换掉，因为UITableViewController中的tableview已经做了可以自适应键盘高度来改变tableview的额外高度。</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-08-22T18:16:27+08:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
       </p>
