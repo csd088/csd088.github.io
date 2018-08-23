@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>零基础在Mac上用Octopress和GitHub搭建个人博客 - 东方不败的个人博客</title>
+  <meta name="author" content="chenshengdong">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://csd088.github.io/blog/2018/08/23/ling-ji-chu-zai-macshang-yong-octopresshe-githubda-jian-ge-ren-bo-ke/">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="东方不败的个人博客" type="application/atom+xml">
+
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://csd088.github.io/blog/2018/08/23/ling-ji-chu-zai-macshang-yong-octopresshe-githubda-jian-ge-ren-bo-ke/">
+  <meta property="og:title" content="零基础在Mac上用Octopress和GitHub搭建个人博客 - 东方不败的个人博客">
+  
+
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      
+        <header role="banner">
+          <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">东方不败的个人博客</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="#">Projects</a></li>
+<li ><a href="/blog/archives">Archives</a></li>
+<li ><a href="#">About</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="csd088.github.io">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+        </header>
+      
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="东方不败的个人博客" />
+    
+    <meta itemprop="url" content="http://csd088.github.io" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-08-23T14:03:40+08:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        零基础在Mac上用Octopress和GitHub搭建个人博客
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody description"><p>本文主要是记录一个之前完全没接触过博客的新手，在Mac上使用<a href="http://octopress.org">Octopress</a>和GitHub搭建个人博客的经历。
+本人资质笨拙，参考<a href="http://yulingtianxia.com/blog/2014/04/05/macosx10-dot-9shang-yong-octopresshe-githubda-jian-ge-ren-bo-ke/">玉令天下</a>、<a href="https://www.jianshu.com/u/c188a9c836b3">单刀土豆</a>、<a href="https://www.jianshu.com/p/37a6a63c21da">Vanbein</a>等大神的经验，花了差不多一天时间终于成功构建了一个简陋的个人博客。</p>
+
+<!--more-->
+
+
+<h2>环境搭建</h2>
+
+<p>1、安装Ruby环境，安装RVM同时安装最新Ruby（已安装的可跳过）</p>
+
+<pre><code>curl -L https://get.rvm.io | bash -s stable --ruby
+</code></pre>
+
+<p>2、安装完，查看Ruby版本</p>
+
+<pre><code>ruby -v
+</code></pre>
+
+<p>3、如果你的 Ruby 版本不低于 2.3.0，可直接跳下一步进行安装 RubyGems。否则需要执行如下命令</p>
+
+<pre><code>rvm install 2.5.1
+rvm use 2.5.1
+</code></pre>
+
+<h2>安装Octopress</h2>
+
+<p>1、将 Octopress 的项目 clone 到本地，终端执行如下命令：</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+</code></pre>
+
+<p>2、安装完，进入octopress目录：</p>
+
+<pre><code>cd octopress
+</code></pre>
+
+<p>3、然后执行（需科学上网）</p>
+
+<pre><code>sudo gem install bundler
+bundle install
+</code></pre>
+
+<p>4、安装默认主题</p>
+
+<pre><code>rake install
+</code></pre>
+
+<p>5、预览效果，这个时候已经搭建好一个简单的Octopress博客了</p>
+
+<pre><code>rake preview
+</code></pre>
+
+<p>然后打开浏览器输入 <a href="http://localhost:4000/">http://localhost:4000/</a>
+正常结果会出现如下界面</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/635689-9a554909effc43fe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="MacDown Screenshot" /></p>
+
+<p><mark>本地预览过一次发现修改后再次执行预览命令无效解决办法</mark></p>
+
+<p>终端输入</p>
+
+<pre><code>    lsof -wni tcp:4000 #找到进程的PID值
+    kill -9 PID值
+</code></pre>
+
+<p>现在就可以刷新本地预览了
+。</p>
+
+<h2>本地Octopress博客部署到GitHub上去</h2>
+
+<h3>1、新建GitHub repositiry</h3>
+
+<p>首先需要有个GitHub账号，没有的自行注册，登录GitHub后，新建<strong>GitHub repository</strong> ，项目名称（<strong>Repository name</strong>）命名格式为 <strong>username.github.io</strong> ，username 是你的 Github 用户名（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 csd088，所以输入 csd088.github.io 即可。点击 <strong>Create repository</strong> 创建。</p>
+
+<h3>2、配置GitHub Pages</h3>
+
+<p>终端执行如下命令：</p>
+
+<pre><code>cd octopress
+rake setup_github_pages
+</code></pre>
+
+<p>该命令会要求我们输入 Github 仓库的 URL 。复制粘贴下我们新建仓库的 SSH 或 HTTPS URL 即可。（例如：<em>git@github.com:username/username.github.io.git</em>），注意此处有坑，若是新手，选择了SSH后面会出现要求配置SSH Key问题，可能会导致很麻烦,主要是需要配置<strong>publickey</strong> 之后才能提交到GitHub</p>
+
+<p>不然提交的时候会提示：</p>
+
+<pre><code>Permission denied (publickey).  fatal: Could not read from remote respository.
+</code></pre>
+
+<h3>配置publickey的方法</h3>
+
+<p>1、生成新的ssh key这里会提示要不要rewrite，键入y，还有提示输入passPhrase，输入空格即可</p>
+
+<pre><code>cd ~/.ssh
+ssh-keygen
+</code></pre>
+
+<p>2、测试一下连接</p>
+
+<pre><code>ssh -T -v git@github.com
+</code></pre>
+
+<p>不出意外的话这里会报错，最后几行提示信息如下：</p>
+
+<pre><code>debug1: Offering RSA public key: yourpath/.ssh/id_rsa   debug1: Authentications that can continue: publickey    debug1: Trying private key:yourpath/.ssh/id_dsa debug1: Trying private key:yourpath/.ssh/id_ecdsa   debug1: Trying private key:yourpath/.ssh/id_ed25519 debug1: No more authentication methods to try.  Permission denied (publickey).
+</code></pre>
+
+<p>提示信息表明路径 yourpath/.ssh下id_rsa文件存在，并且提供public key，然而无法和网站中的ssh-key匹配上。于是程序转而寻找yourpath/.ssh路径下的id_dsa文件，id_ecdsa文件，id_ed25519文件，看它们是不是能提供新的public key。
+查看一下yourpath/.ssh，会发现下面根本不存在id_dsa，id_ecdsa，id_ed25519文件。 出错的原因其实在于步骤4更新了本地的ssh key，然而网站上的ssh key还为旧值，所以匹配不上，就报错Permission denied (publickey)</p>
+
+<p>3、打开yourpath/.ssh/id_rsa.pub（.pub为公钥文件，id_rsa为私钥文件），复制里面的内容。 </p>
+
+<p>4、打开<a href="https://github.com/settings/profile">https://github.com/settings/profile</a>，在SSH key那栏选择New SSH Key，并将复制内容拷贝到其中，选择保存。</p>
+
+<p>5、再次测试$ ssh -T git@github.com，提示 </p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>You've successfully authenticated, but GitHub does not provide shell access.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>错误排查完毕 ^_^</strong></p>
+
+<p>到目前为止已经将 Octopress 生成的静态站点与 GitHub 进行绑定了</p>
+
+<h2>创建文章</h2>
+
+<p>终端执行指令：</p>
+
+<pre><code>rake new_post["title"]    #title为你的文章名，可随意更改
+</code></pre>
+
+<p>生成的新文章在source/_post/目录下，文件名构成为时间和标题的拼音。我们可以用Markdown编辑器对文章进行修改。
+打开新建的 markdown 文件（我目前用的 MacDown 打开），会发现头文件有如下内容（千万不要删除这段信息）：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: post             #post代表是一篇博文
+</span><span class='line'>title: "hello world"
+</span><span class='line'>date: 2015-10-14 19:59:22 +0800
+</span><span class='line'>comments: true         #是否允许评论
+</span><span class='line'>categories:             #分类
+</span><span class='line'>---
+</span><span class='line'>
+</span><span class='line'>//这边编写简介
+</span><span class='line'>&lt;!--more--&gt;   //这个以下的内容只有详情页才能看到
+</span><span class='line'>//这半边编写正文</span></code></pre></td></tr></table></div></figure>
+
+
+<p>终端用指定软件打开文件命令</p>
+
+<pre><code>open -a /Applications/指定程序　指定文件（文件夹）
+</code></pre>
+
+<p><mark>不知道软件所在的路径，可以直接把软件拖到终端就可以获取到</mark></p>
+
+<p>正文写完后，终端执行如下指令即可生成静态站点，：</p>
+
+<pre><code>rake generate
+</code></pre>
+
+<p>如果你想预览本地的站点，可以执行终端指令：</p>
+
+<pre><code>rake preview
+</code></pre>
+
+<p>此时，可以使用浏览器打开 localhost:4000 查看效果。如果没有问题可以将静态站点同步到 GitHub 远程仓库中，终端执行指令：</p>
+
+<pre><code>rake deploy
+</code></pre>
+
+<p>你会发现我们的静态站点已经被 push 到 GitHub仓库的 master 分支上。稍等几分钟，访问博客地址 username.github.io ，就会发现你的个人博客站的第一篇blog已创建成功了。</p>
+
+<p>如果你还想把自己的本地资源文件（如Markdown文件等内容）也同步到 GitHub 中，可以执行以下指令：</p>
+
+<pre><code>git add .
+git commit -m "comment"  #comment可随意更改
+git push origin source
+</code></pre>
+
+<p>这样我们的资源文件就会同步到 GitHub 的 source 分支了。</p>
+
+<h2>主要用到的几个命令解释</h2>
+
+<pre><code>rake new_post[’title’]     # 新建博文文件
+rake generate              # 将编辑好的博文生成网页
+rake preview               # 提交前可以进行本地预览
+rake deploy                # 将博文部署到Github上
+git add .                       # 保存缓存文件
+git commit -m '注释'       # 提交本地更改的文件并注释
+git push origin source     # 将源文件push到Github的source分支
+</code></pre>
+</div>
+
+
+      <footer class="post-footer">
+        <p class="meta text-muted">
+          
+  
+
+
+
+<figure class="author-image">
+    <span class="img" href="/about" style="background-image: url(/images/avatar.jpg)"><span class="hidden">Picture</span></span>
+</figure>
+
+<section class="author">
+    <h4><span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="fn" itemprop="name">chenshengdong</span></span></h4>
+
+    <div class="author-meta">
+        <span class="author-link icon-link"><i class="fa fa-link" aria-hidden="true"></i> <a href="http://csd088.github.io">http://csd088.github.io</a></span>
+    </div>
+</section>
+
+<hr>
+
+<section class="share">
+    
+    <h4>Share this post</h4>
+    
+    <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url=http://csd088.github.io/blog/2018/08/23/ling-ji-chu-zai-macshang-yong-octopresshe-githubda-jian-ge-ren-bo-ke/;" 
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://csd088.github.io/blog/2018/08/23/ling-ji-chu-zai-macshang-yong-octopresshe-githubda-jian-ge-ren-bo-ke/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="fa fa-google-plus" href="https://plus.google.com/share?url=http://csd088.github.io/blog/2018/08/23/ling-ji-chu-zai-macshang-yong-octopresshe-githubda-jian-ge-ren-bo-ke/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+    
+</section>
+
+
+
+
+<!--
+<footer class="post-footer">
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Instant%20Movie%20Streamer%20v3%20Release&amp;url=http://iyask.me/instant-movie-streamer-v3-release/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://iyask.me/instant-movie-streamer-v3-release/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://iyask.me/instant-movie-streamer-v3-release/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+
+-->
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2018-08-23T14:03:40+08:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+          <br>
+
+
+        </p>
+        
+          <div class="pager">
+            
+            
+              
+                <a href="/blog/2018/08/23/tabbleviewde-cellzhong-you-textfield,-textviewshi-fang-zhi-jian-pan-zhe-dang/" class="col-xs-12 col-md-4 btn btn-default" title="Previous Post: TabbleView的Cell中有Textfield、TextView时防止键盘遮挡"> 
+                  <div class="text-muted">
+                    <small>Previous Post</small>
+                  </div>
+                  <div class="pager-title">
+                    <h4>TabbleView的Cell中有Textfield、TextView时防止键盘遮挡</h4>
+                  </div>
+                </a>
+              
+            
+            
+            
+          </div>
+        
+      </footer>
+    </article>
+    
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2018 - chenshengdong<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/bhrigu123/abacus">abacus theme</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
+
+
+  </body>
+</html>
