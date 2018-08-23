@@ -4,7 +4,7 @@
   <title><![CDATA[东方不败的个人博客]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-08-23T15:50:17+08:00</updated>
+  <updated>2018-08-23T15:53:50+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[chenshengdong]]></name>
@@ -240,24 +240,6 @@ git push origin source     # 将源文件push到Github的source分支
 </code></pre>
 
 <p>直接在初始化TableView的时候用系统的UITableViewController替换掉，因为UITableViewController中的tableview已经做了可以自适应键盘高度来改变tableview的额外高度。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[测试2]]></title>
-    <link href="http://csd088.github.io/blog/2018/08/22/ce-shi-2/"/>
-    <updated>2018-08-22T18:16:27+08:00</updated>
-    <id>http://csd088.github.io/blog/2018/08/22/ce-shi-2</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[第一页]]></title>
-    <link href="http://csd088.github.io/blog/2018/08/22/di-%5B%3F%5D-ye/"/>
-    <updated>2018-08-22T15:17:13+08:00</updated>
-    <id>http://csd088.github.io/blog/2018/08/22/di-[?]-ye</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
