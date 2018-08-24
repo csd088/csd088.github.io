@@ -4,7 +4,7 @@
   <title><![CDATA[东方不败的个人博客]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-08-24T16:37:40+08:00</updated>
+  <updated>2018-08-24T17:00:14+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[chenshengdong]]></name>
@@ -27,9 +27,21 @@ Swift 中的闭包与 C 和 Objective-C 中的代码块（blocks）以及其他�
 <p>全局函数和嵌套函数其实就是特殊的闭包。
 闭包的形式有：</p>
 
-<p>| 全局函数       | 嵌套函数       |闭包表达式       |
-&mdash;&mdash;&mdash;&mdash;&ndash; |&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;- |
-|有名字但是不能捕获任何值|有名字，也能捕获封闭函数内的值|无名闭包，使用轻量级语法，可以根据上下文环境捕获值|</p>
+<table border = "1" align="center">
+<tr>
+<th>全局函数 </th>
+<th>嵌套函数</th>
+<th>闭包表达式 </th>
+</tr>
+<tr>
+<td>有名字但是不能捕获任何值</td>
+<td>有名字，也能捕获封闭函数内的值</td>
+<td>无名闭包，使用轻量级语法，可以根据上下文环境捕获值</td>
+</tr>
+</table>
+
+
+<p><br></p>
 
 <p>Swift中的闭包有很多优化的地方:
 根据上下文推断参数和返回值类型
