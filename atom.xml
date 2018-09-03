@@ -4,7 +4,7 @@
   <title><![CDATA[东方不败的个人博客]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-08-24T17:00:14+08:00</updated>
+  <updated>2018-09-03T13:55:20+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[chenshengdong]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ios键盘之数字键盘]]></title>
+    <link href="http://csd088.github.io/blog/2018/09/03/iosjian-pan-zhi-shu-zi-jian-pan/"/>
+    <updated>2018-09-03T13:41:05+08:00</updated>
+    <id>http://csd088.github.io/blog/2018/09/03/iosjian-pan-zhi-shu-zi-jian-pan</id>
+    <content type="html"><![CDATA[<p>经常要用到金额输入带小数点的键盘，都并不需要自定义，系统有提供带点的数字键盘。</p>
+
+<!--more-->
+
+
+<h3>配置</h3>
+
+<p>field.keyboardType = UIKeyboardTypeNumberPad; 
+这个只是纯数字键盘，无小数点。</p>
+
+<p>field.keyboardType = UIKeyboardTypeDecimalPad 
+这个只是纯数字键盘，有小数点。</p>
+
+<h4><a name="fenced-code-block">金额输入限制两位小数</a></h4>
+
+<p>代码</p>
+
+<pre><code>- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+{
+    //string就是此时输入的那个字符textField就是此时正在输入的那个输入框返回YES就是可以改变输入框的值NO相反
+    NSString * toBeString = [textField.text     stringByReplacingCharactersInRange:range withString:string];
+     // 判断是否输入内容，或者用户点击的是键盘的删除按钮
+     if (![string isEqualToString:@""]) {
+            if ([textField isEqual:self.textField]) {
+        // 小数点在字符串中的位置 第一个数字从0位置开始
+                NSInteger dotLocation = [textField.text rangeOfString:@"."].location;
+                if (dotLocation == NSNotFound &amp;&amp; range.location != 0) {
+            //没有小数点,最大数值
+                    if (range.location &gt;= 9){
+                    NSLog(@"单笔金额不能超过亿位");
+                    if ([string isEqualToString:@"."] &amp;&amp; range.location == 9) {
+                        return YES;
+                    }
+                    return NO;
+                }
+            }
+        //判断输入多个小数点,禁止输入多个小数点
+            if (dotLocation != NSNotFound){
+            if ([string isEqualToString:@"."])return NO;
+        }
+        //判断小数点后最多两位
+        if (dotLocation != NSNotFound &amp;&amp; range.location &gt; dotLocation + 2) { return NO; }
+        //判断总长度
+            if (textField.text.length &gt; 11) {
+                return NO;
+            }
+        }
+    }
+    return YES;
+}
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Swift闭包笔记]]></title>
