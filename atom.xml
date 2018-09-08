@@ -4,7 +4,7 @@
   <title><![CDATA[东方不败的个人博客]]></title>
   <link href="http://csd088.github.io/atom.xml" rel="self"/>
   <link href="http://csd088.github.io/"/>
-  <updated>2018-09-03T13:55:20+08:00</updated>
+  <updated>2018-09-08T14:20:56+08:00</updated>
   <id>http://csd088.github.io/</id>
   <author>
     <name><![CDATA[chenshengdong]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS11 navigationItem.titleView 添加手势不响应]]></title>
+    <link href="http://csd088.github.io/blog/2018/09/08/ios11-navigationitem-dot-titleview-tian-jia-shou-shi-bu-xiang-ying/"/>
+    <updated>2018-09-08T14:15:55+08:00</updated>
+    <id>http://csd088.github.io/blog/2018/09/08/ios11-navigationitem-dot-titleview-tian-jia-shou-shi-bu-xiang-ying</id>
+    <content type="html"><![CDATA[<p>在iOS11 navigationItem.titleView = 自定义view，自定义view添加点击手势，事件不触发，在之前版本是没问题的。</p>
+
+<!--more-->
+
+
+<p>在iOS11 自定义titleview里有个button,或者点击手势,点击事件不触发了.的解决办法如下：</p>
+
+<p>1：在自定义titleview 里重写 intrinsicContentSize 属性，代码如下：</p>
+
+<pre><code>@property(nonatomic, assign) CGSize intrinsicContentSize;
+</code></pre>
+
+<p>2：然后在 self.navigationItem.titleView = _titleView; 之前加入下面的代码：</p>
+
+<pre><code>_titleView.intrinsicContentSize = CGSizeMake(200, 40);
+</code></pre>
+
+<p>CGSizeMake(200, 40); 宽高 自己根据实际情况自己设置具体值就可以了。这样titleview 里的button 应该就可以点击了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ios键盘之数字键盘]]></title>
